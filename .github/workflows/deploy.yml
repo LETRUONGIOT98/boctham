@@ -1,0 +1,27 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - main  # Khi có thay đổi trên nhánh chính, quy trình triển khai sẽ được kích hoạt
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Deploy to Render (ví dụ cho Render)
+        run: |
+          curl -fsSL https://render.com/deploy/success?project_url=https://github.com/LETRUONGIOT98/boctham
