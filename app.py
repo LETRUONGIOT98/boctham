@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 import random
-import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Đặt khóa bí mật cho Flask
@@ -29,6 +28,7 @@ def index():
     global numbers
     selected_number = None
     selected_name = None
+    remaining_numbers = numbers  # Danh sách các số chưa quay
 
     if request.method == "POST":
         email = request.form.get("email")
@@ -56,7 +56,7 @@ def index():
             except Exception as e:
                 flash(f"Lỗi khi gửi email: {e}", "danger")
 
-    return render_template("index.html", selected_number=selected_number, selected_name=selected_name)
+    return render_template("index.html", selected_number=selected_number, selected_name=selected_name, remaining_numbers=remaining_numbers)
 
 if __name__ == "__main__":
-     app.run(host='0.0.0.0', port=10000)
+    app.run(host='0.0.0.0', port=10000)

@@ -29,11 +29,23 @@
             </div>
             <button type="submit" class="btn btn-primary">Bốc Thăm và Gửi Email</button>
         </form>
+
         {% if selected_number and selected_name %}
         <div class="mt-4">
             <h3>Kết quả:</h3>
             <p>Số đã bốc: <strong>{{ selected_number }}</strong></p>
              
+        </div>
+        {% endif %}
+
+        {% if remaining_numbers %}
+        <div class="mt-4">
+            <h3>Số còn lại:</h3>
+            <ul>
+                {% for number in remaining_numbers %}
+                    <li>{{ number }}</li>
+                {% endfor %}
+            </ul>
         </div>
         {% endif %}
     </div>
