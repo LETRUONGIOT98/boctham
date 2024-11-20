@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,20 +22,25 @@
             </div>
         {% endif %}
         {% endwith %}
+
+        <!-- Form bốc thăm yêu cầu email -->
         <form method="POST">
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
-            <button type="submit" class="btn btn-primary">Bốc Thăm và Gửi Email</button>
-            <button type="submit" name="reset" class="btn btn-secondary ml-2">Reset Danh Sách</button>  <!-- Nút reset -->
+            <button type="submit" class="btn btn-primary">Bốc Thăm</button>
+        </form>
+
+        <!-- Form reset không yêu cầu email -->
+        <form method="POST" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-secondary" name="reset">Reset</button>
         </form>
 
         {% if selected_number and selected_name %}
         <div class="mt-4">
             <h3>Kết quả:</h3>
-            <p>Số đã bốc: <strong>{{ selected_number }}</strong></p>
-            <p>Người nhận quà: <strong>{{ selected_name }}</strong></p>
+            <p>Số đã bốc: <strong>{{ selected_number }}</strong> - Tên đã được gửi vào gmail của bạn</strong></p>
         </div>
         {% endif %}
 
