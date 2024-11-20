@@ -1,4 +1,4 @@
- from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 import random
 
@@ -28,16 +28,10 @@ def index():
     global numbers
     selected_number = None
     selected_name = None
-    remaining_numbers = numbers  # Danh sách các số chưa quay
 
     if request.method == "POST":
         email = request.form.get("email")
         
-        if "reset" in request.form:  # Kiểm tra xem người dùng có nhấn nút reset không
-            numbers = list(range(1, 18))  # Reset lại danh sách số
-            flash("Danh sách số đã được reset!", "info")
-            return redirect("/")  # Tải lại trang để reset
-
         if not email:
             flash("Vui lòng nhập email!", "danger")
         elif not numbers:
@@ -61,7 +55,7 @@ def index():
             except Exception as e:
                 flash(f"Lỗi khi gửi email: {e}", "danger")
 
-    return render_template("index.html", selected_number=selected_number, selected_name=selected_name, remaining_numbers=remaining_numbers)
+    return render_template("index.html", selected_number=selected_number, selected_name=selected_name)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=10000)
+    app.run(debug=True)
