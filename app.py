@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash
+ from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 import random
 
@@ -33,6 +33,11 @@ def index():
     if request.method == "POST":
         email = request.form.get("email")
         
+        if "reset" in request.form:  # Kiểm tra xem người dùng có nhấn nút reset không
+            numbers = list(range(1, 18))  # Reset lại danh sách số
+            flash("Danh sách số đã được reset!", "info")
+            return redirect("/")  # Tải lại trang để reset
+
         if not email:
             flash("Vui lòng nhập email!", "danger")
         elif not numbers:
