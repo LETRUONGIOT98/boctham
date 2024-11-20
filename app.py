@@ -13,7 +13,7 @@ app.config['MAIL_USERNAME'] = 'linhkienvang.sell@gmail.com'  # Thay bằng email
 app.config['MAIL_PASSWORD'] = 'pbiwvptfncfwfwji'  # Mật khẩu ứng dụng
 
 mail = Mail(app)
-
+ 
 # Danh sách số và tên tương ứng
 numbers = list(range(1, 18))
 names = {
