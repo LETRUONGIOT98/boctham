@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,13 +28,14 @@
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <button type="submit" class="btn btn-primary">Bốc Thăm và Gửi Email</button>
+            <button type="submit" name="reset" class="btn btn-secondary ml-2">Reset Danh Sách</button>  <!-- Nút reset -->
         </form>
 
         {% if selected_number and selected_name %}
         <div class="mt-4">
             <h3>Kết quả:</h3>
             <p>Số đã bốc: <strong>{{ selected_number }}</strong></p>
-             
+            <p>Người nhận quà: <strong>{{ selected_name }}</strong></p>
         </div>
         {% endif %}
 
