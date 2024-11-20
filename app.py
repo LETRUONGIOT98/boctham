@@ -13,7 +13,7 @@ app.config['MAIL_USERNAME'] = 'linhkienvang.sell@gmail.com'  # Thay bằng email
 app.config['MAIL_PASSWORD'] = 'pbiwvptfncfwfwji'  # Mật khẩu ứng dụng
 
 mail = Mail(app)
- 
+
 # Danh sách số và tên tương ứng
 numbers = list(range(1, 18))
 names = {
@@ -58,4 +58,4 @@ def index():
     return render_template("index.html", selected_number=selected_number, selected_name=selected_name)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
