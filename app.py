@@ -59,5 +59,4 @@ def index():
     return render_template("index.html", selected_number=selected_number, selected_name=selected_name)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Sử dụng PORT từ biến môi trường, mặc định là 5000 nếu không có
-    app.run(host="0.0.0.0", port=port)  # Lắng nghe tất cả các yêu cầu từ các IP khác nhau
+     app.run(host='0.0.0.0', port=10000)
