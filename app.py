@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 import random
+import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Đặt khóa bí mật cho Flask
@@ -58,4 +59,5 @@ def index():
     return render_template("index.html", selected_number=selected_number, selected_name=selected_name)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Sử dụng PORT từ biến môi trường, mặc định là 5000 nếu không có
+    app.run(host="0.0.0.0", port=port)  # Lắng nghe tất cả các yêu cầu từ các IP khác nhau
