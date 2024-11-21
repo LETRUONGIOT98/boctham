@@ -38,8 +38,8 @@ def send_email():
     
     # Gửi email
     try:
-        sender_email = "linhkienvang.sell@gmail.com"  # Thay bằng email của bạn
-        sender_password = "pbiwvptfncfwfwji"  # Thay bằng mật khẩu ứng dụng
+        sender_email = "*******************"  # Thay bằng email của bạn
+        sender_password = "******************"  # Thay bằng mật khẩu ứng dụng
 
         subject = "Kết quả bốc thăm mất quà"
         body = f"Bạn sẽ tặng quà cho: {selected_char}"
