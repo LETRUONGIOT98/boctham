@@ -9,8 +9,8 @@ app.secret_key = 'your_secret_key'  # Đặt khóa bí mật cho Flask
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'linhkienvang.sell@gmail.com'  # Thay bằng email của bạn
-app.config['MAIL_PASSWORD'] = 'pbiwvptfncfwfwji'  # Mật khẩu ứng dụng
+app.config['MAIL_USERNAME'] = '*************************'  # Thay bằng email của bạn
+app.config['MAIL_PASSWORD'] = '*************************'  # Mật khẩu ứng dụng
 
 mail = Mail(app)
 
